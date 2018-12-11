@@ -1,14 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @note.title %>
-</p>
+<%= link_to 'Edit', edit_note_path(@note), class:'btn btn-success' %> |
+<%= link_to 'Back', notes_path, class:'btn btn-info' %>
 
-<p>
-  <strong>Content:</strong>
-  <%= @note.content %>
-</p>
-
-<%= link_to 'Edit', edit_note_path(@note) %> |
-<%= link_to 'Back', notes_path %>
+<div class="card text-center">
+  <div class="card-header">
+    <h1><%= @note.title %></h1>
+  </div>
+  <div class="card-body">
+    <p class="card-text"><%= @note.content %></p>
+  </div>
+  <div class="card-footer text-muted">
+    <%= @note.created_at %>
+  </div>
+</div>
