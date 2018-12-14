@@ -20,8 +20,12 @@
         <td><%= note.created_at %></td>
         <td>
           <%= link_to 'Show', note, class: 'btn btn-primary' %>
-          <%= link_to 'Edit', edit_note_path(note), class: 'btn btn-danger' %>
-          <%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-warning' %>
+          <% if can?(:edit, note) %>
+            <%= link_to 'Edit', edit_note_path(note), class: 'btn btn-danger' %>
+          <% end %>
+          <% if can?(:destroy, note) %>
+            <%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-warning' %>
+          <% end %>
         </td>
       </tr>
     <% end %>
