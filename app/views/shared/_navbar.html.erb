@@ -6,6 +6,11 @@
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
       <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="#">
+      <% if user_signed_in? %>
+          <%= current_user.email %>
+      </a>
+      <% end %>
       <% if user_signed_in? %>
         <a class="nav-item nav-link" href="<%= destroy_user_session_path %>" data-method='delete'>Salir</a>
       <% else %>
