@@ -2,6 +2,7 @@
   "name": "notas",
   "private": true,
   "dependencies": {
-    "datatables.net-bs4": "^1.10.19"
+    "datatables.net-bs4": "^1.10.19",
+    "jquery": "^3.3.1"
   }
 }
